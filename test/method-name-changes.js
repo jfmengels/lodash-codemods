@@ -1,10 +1,7 @@
 import plugin from '../lib/method-name-changes';
-import testPlugin from './helpers/jscodeshift-wrapper';
+import {testPlugin, with_} from './helpers/jscodeshift-wrapper';
 
-const test = testPlugin(plugin);
-const with_ = (input) => `var _ = require('lodash');\n${input}`;
-
-const testUnchanged = (input) => test(input, input);
+const {test, testUnchanged} = testPlugin(plugin);
 
 test(with_('_.pluck(foo, bar)'), with_('_.map(foo, bar)'));
 
