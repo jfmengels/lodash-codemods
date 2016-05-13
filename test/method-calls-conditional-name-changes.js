@@ -2,14 +2,17 @@ import plugin from '../lib/method-calls-conditional-name-changes';
 import testPlugin from './helpers/jscodeshift-wrapper';
 
 const test = testPlugin(plugin);
-const with_ = (input) => `var _ = require('lodash');\n${input}`;
+const with_ = (input) => `var _ = require('lodash'); ${input}`;
 
 const testUnchanged = (input) => test(input, input);
 
 test(with_('_.assign(foo, bar, customizer)'), with_('_.assignWith(foo, bar, customizer)'));
 testUnchanged(with_('_.assign(foo, bar)'));
 
-test(with_('_.clone(foo, customizer)'), with_('_.cloneWith(foo, customizer)'));
+test(with_('_.clone(foo, false)'), with_('_.clone(foo)'));
+test(with_('_.clone(foo, true)'), with_('_.cloneDeep(foo)'));
+test(with_('_.clone(foo, false, customizer)'), with_('_.cloneWith(foo, customizer)'));
+test(with_('_.clone(foo, true, customizer)'), with_('_.cloneDeepWith(foo, customizer)'));
 testUnchanged(with_('_.clone(foo)'));
 
 test(with_('_.cloneDeep(foo, customizer)'), with_('_.cloneDeepWith(foo, customizer)'));
