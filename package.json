@@ -29,7 +29,8 @@
     "transform"
   ],
   "dependencies": {
-    "jscodeshift": "^0.3.20"
+    "jscodeshift": "^0.3.20",
+    "lodash": "^4.12.0"
   },
   "devDependencies": {
     "ava": "^0.14.0",
