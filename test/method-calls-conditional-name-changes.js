@@ -3,8 +3,11 @@ import {testPlugin, with_} from './helpers/jscodeshift-wrapper';
 
 const {test, testUnchanged} = testPlugin(plugin);
 
-test(with_('_.assign(foo, bar, customizer)'), with_('_.assignWith(foo, bar, customizer)'));
+test(with_('_.assign(foo, bar, function() {})'), with_('_.assignWith(foo, bar, function() {})'));
+test(with_('_.assign(foo, bar, function() {}, this)'), with_('_.assignWith(foo, bar, function() {}, this)'));
+test(with_('_.assign(foo, bar, () => {})'), with_('_.assignWith(foo, bar, () => {})'));
 testUnchanged(with_('_.assign(foo, bar)'));
+testUnchanged(with_('_.assign(foo, bar, baz)'));
 
 test(with_('_.clone(foo, false)'), with_('_.clone(foo)'));
 test(with_('_.clone(foo, true)'), with_('_.cloneDeep(foo)'));
