@@ -36,6 +36,9 @@ testUnchanged(with_('_.max(foo)'));
 test(with_('_.min(foo, iteratee)'), with_('_.minBy(foo, iteratee)'));
 testUnchanged(with_('_.min(foo)'));
 
+test(with_('_.sum(foo, iteratee)'), with_('_.sumBy(foo, iteratee)'));
+testUnchanged(with_('_.sum(foo)'));
+
 test(with_('_.omit(foo, () => {})'), with_('_.omitBy(foo, () => {})'));
 test(with_('_.omit(foo, () => {}, this)'), with_('_.omitBy(foo, () => {}, this)'));
 testUnchanged(with_('_.omitBy(foo, "a")'));
@@ -43,3 +46,20 @@ testUnchanged(with_('_.omitBy(foo, ["a", "b"])'));
 
 test(with_('_.sample(foo, n)'), with_('_.sampleSize(foo, n)'));
 testUnchanged(with_('_.sample(foo)'));
+
+test(with_('_.sortedIndex(foo, bar, iteratee)'), with_('_.sortedIndexBy(foo, bar, iteratee)'));
+test(with_('_.sortedIndex(foo, bar, iteratee, this)'), with_('_.sortedIndexBy(foo, bar, iteratee, this)'));
+testUnchanged(with_('_.sortedIndex(foo, bar)'));
+
+test(with_('_.sortedLastIndex(foo, bar, iteratee)'), with_('_.sortedLastIndexBy(foo, bar, iteratee)'));
+test(with_('_.sortedLastIndex(foo, bar, iteratee, this)'), with_('_.sortedLastIndexBy(foo, bar, iteratee, this)'));
+testUnchanged(with_('_.sortedLastIndex(foo, bar)'));
+
+test(with_('_.uniq(foo, false)'), with_('_.uniq(foo)'));
+test(with_('_.uniq(foo, true)'), with_('_.sortedUniq(foo)'));
+test(with_('_.uniq(foo, false, customizer)'), with_('_.uniqBy(foo, customizer)'));
+test(with_('_.uniq(foo, true, customizer)'), with_('_.sortedUniqBy(foo, customizer)'));
+testUnchanged(with_('_.uniq(foo)'));
+
+test(with_('_.zipObject(foo)'), with_('_.fromPairs(foo)'));
+testUnchanged(with_('_.zipObject(foo, bar)'));
