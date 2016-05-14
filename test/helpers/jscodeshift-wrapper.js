@@ -32,15 +32,21 @@ function runPlugin(plugin, path, source) {
 
 function testPlugin(plugin) {
   var createTest = function (input, expected) {
-    test(input, t => t.is(runPlugin(plugin, input), expected));
+    test(input, function (t) {
+      t.is(runPlugin(plugin, input), expected);
+    });
   };
   return {
     test: createTest,
-    testUnchanged: (input) => createTest(input, input)
+    testUnchanged: function (input) {
+      createTest(input, input);
+    }
   };
 }
 
-const with_ = (input) => `var _ = require('lodash'); ${input}`;
+function with_(input) {
+  return 'var _ = require("lodash"); ' + input;
+}
 
 module.exports = {
   testPlugin: testPlugin,
