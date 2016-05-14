@@ -2,12 +2,13 @@
 
 > Codemods for [Lodash](https://lodash.com/) that simplifies upgrading to newer versions
 
-<img src="screenshot.gif" width="440" align="right">
-
 Codemods are small programs that help you automate changes to your codebase. Think of them as search and replace on steroids.
 
 This module contains a set of codemods that enable you to upgrade your code between various Lodash releases.
 
+#### EXPERIMENTAL
+
+These codemods are experimental and not complete. You can apply them on your codebase, but you need to properly review and test the outputted code before using it.
 
 ## Install
 
