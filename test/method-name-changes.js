@@ -24,6 +24,7 @@ test(with_('_.sortByOrder(foo, bar)'), with_('_.orderBy(foo, bar)'));
 test(with_('_.trimLeft(foo, bar)'), with_('_.trimStart(foo, bar)'));
 test(with_('_.trimRight(foo, bar)'), with_('_.trimEnd(foo, bar)'));
 test(with_('_.trunc(foo, bar)'), with_('_.truncate(foo, bar)'));
+test(with_('_.sortByAll(foo, bar)'), with_('_.sortBy(foo, bar)'));
 
 testUnchanged(with_('_.map(foo, bar)'));
 testUnchanged(with_('pluck(foo, bar)'));
