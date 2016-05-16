@@ -12,6 +12,7 @@ testUnchanged(with_('_.sortBy(foo, function(a) {})'));
 testUnchanged(with_('_.sortBy(foo, () => {})'));
 testUnchanged(with_('_.sortBy(foo, (a) => {})'));
 testUnchanged(with_('_.sortBy()'));
+testUnchanged(with_('_.sortBy(foo, "key")'));
 testUnchanged(with_('_.foo()'));
 testUnchanged(with_('_.foo(foo)'));
 testUnchanged(with_('_.foo(foo, function(a, b) {})'));
