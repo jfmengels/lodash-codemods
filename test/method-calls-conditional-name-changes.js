@@ -63,3 +63,7 @@ testUnchanged(with_('_.uniq(foo)'));
 
 test(with_('_.zipObject(foo)'), with_('_.fromPairs(foo)'));
 testUnchanged(with_('_.zipObject(foo, bar)'));
+
+test(with_('_.flatten(foo, false)'), with_('_.flatten(foo)'));
+test(with_('_.flatten(foo, true)'), with_('_.flattenDeep(foo)'));
+testUnchanged(with_('_.flatten(foo)'));
