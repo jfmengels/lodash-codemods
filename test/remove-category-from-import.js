@@ -23,3 +23,5 @@ testUnchanged('var _ = require("lodash")');
 testUnchanged('require("./lodash/array/chunk")');
 testUnchanged('require("foo")');
 testUnchanged('require(3)');
+testUnchanged('require([])');
+testUnchanged('import "foo";');
