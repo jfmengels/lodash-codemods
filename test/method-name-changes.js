@@ -38,5 +38,14 @@ test(with_('_.trunc(foo, bar)'), with_('_.truncate(foo, bar)'));
 test(with_('_.unique(foo, bar)'), with_('_.uniq(foo, bar)'));
 test(with_('_.where(foo, bar)'), with_('_.filter(foo, bar)'));
 
+test(with_('_.chain(foo).first()'), with_('_.chain(foo).head()'));
+test(with_('_.chain(foo).map(fn).first()'), with_('_.chain(foo).map(fn).head()'));
+test(with_('_.chain(foo).map(fn).foldl(a, b)'), with_('_.chain(foo).map(fn).reduce(a, b)'));
+
+test(with_('_(foo).first()'), with_('_(foo).head()'));
+test(with_('_(foo).map(fn).first()'), with_('_(foo).map(fn).head()'));
+test(with_('_(foo).map(fn).foldl(a, b)'), with_('_(foo).map(fn).reduce(a, b)'));
+
 testUnchanged(with_('_.map(foo, bar)'));
+testUnchanged(with_('a.first(foo, bar)'));
 testUnchanged(with_('pluck(foo, bar)'));
