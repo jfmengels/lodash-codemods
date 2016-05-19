@@ -67,3 +67,15 @@ testUnchanged(with_('_.zipObject(foo, bar)'));
 test(with_('_.flatten(foo, false)'), with_('_.flatten(foo)'));
 test(with_('_.flatten(foo, true)'), with_('_.flattenDeep(foo)'));
 testUnchanged(with_('_.flatten(foo)'));
+
+test(with_('_.chain(foo).flatten(false)'), with_('_.chain(foo).flatten()'));
+test(with_('_.chain(foo).flatten(true)'), with_('_.chain(foo).flattenDeep()'));
+testUnchanged(with_('_.chain(foo).flatten()'));
+
+test(with_('_(foo).flatten(false)'), with_('_(foo).flatten()'));
+test(with_('_(foo).flatten(true)'), with_('_(foo).flattenDeep()'));
+testUnchanged(with_('_(foo).flatten()'));
+
+testUnchanged(with_('a.flatten(foo)'));
+testUnchanged(with_('a.chain(foo).flatten()'));
+testUnchanged(with_('a(foo).flatten()'));
