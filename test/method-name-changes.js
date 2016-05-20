@@ -11,6 +11,7 @@ test(with_('_.collect(foo, bar)'), with_('_.map(foo, bar)'));
 test(with_('_.compose(foo, bar)'), with_('_.flowRight(foo, bar)'));
 test(with_('_.contains(foo, bar)'), with_('_.includes(foo, bar)'));
 test(with_('_.detect(foo, bar)'), with_('_.find(foo, bar)'));
+test(with_('_.eq(foo, bar)'), with_('_.isEqual(foo, bar)'));
 test(with_('_.findWhere(foo, bar)'), with_('_.find(foo, bar)'));
 test(with_('_.first(foo, bar)'), with_('_.head(foo, bar)'));
 test(with_('_.foldl(foo, bar)'), with_('_.reduce(foo, bar)'));
