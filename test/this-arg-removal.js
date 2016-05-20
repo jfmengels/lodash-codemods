@@ -9,6 +9,8 @@ test(with_('_.cloneDeep(a, b, c)'), with_('_.cloneDeep(a, _.bind(b, c))'));
 test(with_('_.countBy(a, b, c)'), with_('_.countBy(a, _.bind(b, c))'));
 test(with_('_.dropRightWhile(a, b, c)'), with_('_.dropRightWhile(a, _.bind(b, c))'));
 test(with_('_.dropWhile(a, b, c)'), with_('_.dropWhile(a, _.bind(b, c))'));
+test(with_('_.each(a, b, c)'), with_('_.each(a, _.bind(b, c))'));
+test(with_('_.eachRight(a, b, c)'), with_('_.eachRight(a, _.bind(b, c))'));
 test(with_('_.every(a, b, c)'), with_('_.every(a, _.bind(b, c))'));
 test(with_('_.filter(a, b, c)'), with_('_.filter(a, _.bind(b, c))'));
 test(with_('_.find(a, b, c)'), with_('_.find(a, _.bind(b, c))'));
