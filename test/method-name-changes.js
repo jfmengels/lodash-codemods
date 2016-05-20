@@ -21,7 +21,6 @@ test(with_('_.inject(foo, bar)'), with_('_.reduce(foo, bar)'));
 test(with_('_.invoke(foo, bar)'), with_('_.invokeMap(foo, bar)'));
 test(with_('_.methods(foo, bar)'), with_('_.functions(foo, bar)'));
 test(with_('_.modArgs(foo, bar)'), with_('_.overArgs(foo, bar)'));
-test(with_('_.object(foo, bar)'), with_('_.fromPairs(foo, bar)'));
 test(with_('_.padLeft(foo, bar)'), with_('_.padStart(foo, bar)'));
 test(with_('_.padRight(foo, bar)'), with_('_.padEnd(foo, bar)'));
 test(with_('_.pairs(foo, bar)'), with_('_.toPairs(foo, bar)'));

@@ -62,6 +62,8 @@ test(with_('_.uniq(foo, true, customizer)'), with_('_.sortedUniqBy(foo, customiz
 testUnchanged(with_('_.uniq(foo)'));
 
 test(with_('_.zipObject(foo)'), with_('_.fromPairs(foo)'));
+test(with_('_.object(foo)'), with_('_.fromPairs(foo)'));
+test(with_('_.object(foo, bar)'), with_('_.zipObject(foo, bar)'));
 testUnchanged(with_('_.zipObject(foo, bar)'));
 
 test(with_('_.flatten(foo, false)'), with_('_.flatten(foo)'));
