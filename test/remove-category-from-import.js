@@ -21,6 +21,7 @@ test('require("lodash/methods/foo")', 'require("lodash/foo")');
 testUnchanged('require("lodash")');
 testUnchanged('var _ = require("lodash")');
 testUnchanged('require("./lodash/array/chunk")');
+testUnchanged('require("lodash/fp/chunk")');
 testUnchanged('require("foo")');
 testUnchanged('require(3)');
 testUnchanged('require([])');
