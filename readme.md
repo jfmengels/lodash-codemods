@@ -6,9 +6,11 @@ Codemods are small programs that help you automate changes to your codebase. Thi
 
 This module contains a set of codemods that enable you to upgrade your code between various Lodash releases.
 
-#### EXPERIMENTAL
+# WARNING
 
-These codemods are experimental and not complete. You can apply them on your codebase, but you need to properly review and test the outputted code before using it.
+This tool should help migrate your codebase from one version of [Lodash](https://lodash.com/) to another. That said, it may not be 100% complete or able to apply all the necessary changes. You should NOT rely on the fact that this will work entirely, and you therefore NEED to review the changes made and test that your code is still working.
+
+In cases where static analysis is not enough to figure whether a change should be made, instructions will be printed to the console, and you should follow them to complete the migration.
 
 ## Install
 
