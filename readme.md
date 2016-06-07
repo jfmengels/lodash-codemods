@@ -30,13 +30,16 @@ $ lodash-codemods --help
     $ lodash-codemods [<file|glob> ...]
 
   Options
-    --force, -f    Bypass safety checks and forcibly run codemods
+    --from <version> Specify the version of Lodash currently used
+    --to <version>   Specify the version of Lodash to move to
+    --force, -f      Bypass safety checks and forcibly run codemods
+    --silent, -S     Disable log output
 
   Available upgrades
-    - 3.x.x → 4.x.x
+    - [] → 4.0.0
 ```
 
-Simply run `lodash-codemods` in your terminal and answer a few questions. You can pass a filename directly to the CLI. If you do not, you will be prompted for one.
+Simply run `lodash-codemods` in your terminal and answer a few questions. You can pass one or more filenames directly to the CLI. If you do not, you will be prompted for it.
 
 Ensure you have a backup of your tests or commit the latest changes before running this.
 
