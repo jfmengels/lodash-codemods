@@ -5,6 +5,7 @@
         "./lib/method-calls-conditional-name-changes.js",
         "./lib/method-name-changes.js",
         "./lib/remove-category-from-import.js",
-        "./lib/this-arg-removal.js"
+        "./lib/this-arg-removal.js",
+        "./lib/chain-remove-value.js"
     ]
 }]
