@@ -1,11 +1,14 @@
-import plugin from '../lib/by-iteratee-with-one-param';
-import {testPlugin, with_} from './helpers/jscodeshift-wrapper';
+import test from 'ava';
+import jscodeshift from 'jscodeshift';
+import testPlugin from 'jscodeshift-ava-tester';
+import codemod from '../lib/by-iteratee-with-one-param';
+import {with_} from './helpers/jscodeshift-wrapper';
 
-const {test, testUnchanged} = testPlugin(plugin);
+const {testChanged, testUnchanged} = testPlugin(jscodeshift, test, codemod);
 
-test(with_('_.sortBy(foo, function(a, b) {})'), with_('_.sortBy(foo, function(a) {})'));
-test(with_('_.countBy(foo, function(a, b) {})'), with_('_.countBy(foo, function(a) {})'));
-test(with_('_.countBy(foo, function(a, b) {}, this)'), with_('_.countBy(foo, function(a) {}, this)'));
+testChanged(with_('_.sortBy(foo, function(a, b) {})'), with_('_.sortBy(foo, function(a) {})'));
+testChanged(with_('_.countBy(foo, function(a, b) {})'), with_('_.countBy(foo, function(a) {})'));
+testChanged(with_('_.countBy(foo, function(a, b) {}, this)'), with_('_.countBy(foo, function(a) {}, this)'));
 
 testUnchanged(with_('_.sortBy(foo, function() {})'));
 testUnchanged(with_('_.sortBy(foo, function(a) {})'));
