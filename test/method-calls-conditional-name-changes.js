@@ -44,8 +44,17 @@ testUnchanged(with_('_.sum(foo)'));
 
 testChanged(with_('_.omit(foo, () => {})'), with_('_.omitBy(foo, () => {})'));
 testChanged(with_('_.omit(foo, () => {}, this)'), with_('_.omitBy(foo, () => {}, this)'));
+testChanged(with_('_.omit(foo, function() {})'), with_('_.omitBy(foo, function() {})'));
+testChanged(with_('_.omit(foo, iteratee)'), with_('_.omitBy(foo, iteratee)'));
 testUnchanged(with_('_.omitBy(foo, "a")'));
 testUnchanged(with_('_.omitBy(foo, ["a", "b"])'));
+
+testChanged(with_('_.pick(foo, () => {})'), with_('_.pickBy(foo, () => {})'));
+testChanged(with_('_.pick(foo, () => {}, this)'), with_('_.pickBy(foo, () => {}, this)'));
+testChanged(with_('_.pick(foo, function() {})'), with_('_.pickBy(foo, function() {})'));
+testChanged(with_('_.pick(foo, iteratee)'), with_('_.pickBy(foo, iteratee)'));
+testUnchanged(with_('_.pickBy(foo, "a")'));
+testUnchanged(with_('_.pickBy(foo, ["a", "b"])'));
 
 testChanged(with_('_.sample(foo, n)'), with_('_.sampleSize(foo, n)'));
 testUnchanged(with_('_.sample(foo)'));
