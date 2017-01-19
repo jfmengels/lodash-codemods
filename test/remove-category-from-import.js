@@ -28,3 +28,4 @@ testUnchanged('require("foo")');
 testUnchanged('require(3)');
 testUnchanged('require([])');
 testUnchanged('import "foo";');
+testUnchanged('import chunk from "lodash/fp/chunk";');
