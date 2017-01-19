@@ -1,6 +1,6 @@
 {
   "name": "lodash-codemods",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Codemods to simplify upgrading Lodash versions",
   "license": "MIT",
   "repository": "jfmengels/lodash-codemods",
